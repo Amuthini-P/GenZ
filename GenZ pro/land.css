@@ -1,0 +1,163 @@
+/* land.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background: black;
+  overflow: hidden;
+}
+
+.bg-image {
+  background: url('https://img.freepik.com/free-photo/ai-powered-device-concept_23-2151924168.jpg?semt=ais_hybrid&w=740') no-repeat center center/cover;
+  filter: blur(10px) brightness(0.9) contrast(1.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  box-shadow: 0 0 100px rgba(255, 255, 255, 0.1) inset;
+}
+
+.get-started {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Mild white outline */
+  text-decoration: none;
+  border-radius: 6px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.get-started:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.tagline {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.9;
+  color: #ccc;
+}
+
+nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Mild white outline */
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+nav a:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px white;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
+  padding: 0 4rem;
+  position: relative;
+}
+
+.left {
+  max-width: 55%;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  color: #3c74f5;
+}
+
+.cta {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Mild white outline */
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px white;
+}
+
+.right {
+  max-width: 40%;
+  text-align: right;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+}
+
+.word {
+  font-size: 2.5rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  margin: 0.4rem 0;
+}
+
+#word1 { animation-delay: 0.5s; }
+#word2 { animation-delay: 1.5s; }
+#word3 { animation-delay: 2.5s; }
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

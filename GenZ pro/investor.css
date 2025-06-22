@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, #0d1b2a, #1b263b, #2c2c54);
+  color: white;
+}
+
+/* Blurred Background Image */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.background-img {
+  background: url('https://t4.ftcdn.net/jpg/02/57/95/77/360_F_257957753_y9bWBFhMFev7ikz0Q7cxge066XOAk1KZ.jpg') center/cover no-repeat;
+  filter: blur(4px) brightness(0.65);
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  padding: 3rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  max-width: 90%;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  color: #a0c4ff;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #d0b3ff;
+}
+
+/* Charts Section */
+.investor-stats {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.investor-stats h2 {
+  font-size: 2.2rem;
+  color: #b2f7ef;
+  margin-bottom: 2rem;
+}
+
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+canvas {
+  width: 300px !important;
+  height: 300px !important;
+  background: #ffffff10;
+  padding: 1rem;
+  border-radius: 16px;
+}
+
+/* Insights Section */
+.insights {
+  padding: 2rem;
+  background: #2e2e5f;
+  margin: 2rem 1rem;
+  border-radius: 16px;
+}
+
+.insights h2 {
+  text-align: center;
+  color: #ffd6a5;
+  margin-bottom: 1.5rem;
+}
+
+.insights ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.insights li {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* CTA Button */
+.cta-button {
+  text-align: center;
+  margin: 3rem 0 4rem;
+}
+
+.btn {
+  background: #a0c4ff;
+  color: #000;
+  padding: 0.9rem 2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #d0b3ff;
+  color: #000;
+}

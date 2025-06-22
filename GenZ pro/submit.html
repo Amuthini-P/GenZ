@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Your Startup Idea | GenZ</title>
+  <link rel="stylesheet" href="submit.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0b4f173.js" crossorigin="anonymous"></script>
+  <style>
+    .success-message {
+      text-align: center;
+      color: #4caf50;
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Submit Your Startup Idea</h1>
+    <p>Fuel your vision. Join a generation of game-changers.</p>
+  </section>
+
+  <section class="stats">
+    <div class="stat-box">
+      <i class="fas fa-globe"></i>
+      <h2 class="counter" data-target="125000">0</h2>
+      <p>Global Startups</p>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-rocket"></i>
+      <h2 class="counter" data-target="87000">0</h2>
+      <p>Ideas Launched</p>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-users"></i>
+      <h2 class="counter" data-target="54000">0</h2>
+      <p>Young Founders</p>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-coins"></i>
+      <h2 class="counter" data-target="32000">0</h2>
+      <p>Funded Projects</p>
+    </div>
+  </section>
+
+  <section class="submit-form">
+    <h2>Bring Your Idea to Life</h2>
+    <form id="ideaForm">
+      <input type="text" name="name" placeholder="Your Startup Name" required />
+      <input type="text" name="sector" placeholder="Industry or Sector" required />
+      <textarea name="idea" placeholder="Briefly describe your idea..." required></textarea>
+      <button type="submit">Submit Idea</button>
+    </form>
+    <div id="responseMsg" class="success-message"></div>
+  </section>
+
+  <script>
+    // Animate counters
+    document.querySelectorAll('.counter').forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 100;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+      updateCount();
+    });
+
+    // Handle form submit with fetch
+    document.getElementById("ideaForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const resMsg = document.getElementById("responseMsg");
+
+      try {
+        const response = await fetch("connect2.php", {
+          method: "POST",
+          body: formData
+        });
+
+        const text = await response.text();
+        if (text.trim() === "success") {
+          resMsg.textContent = "🎉 Idea Submitted Successfully!";
+          resMsg.style.color = "#4caf50";
+          this.reset();
+        } else {
+          resMsg.textContent = text;
+          resMsg.style.color = "#f44336";
+        }
+      } catch (err) {
+        resMsg.textContent = "Submission failed. Please try again.";
+        resMsg.style.color = "#f44336";
+      }
+    });
+  </script>
+</body>
+</html>

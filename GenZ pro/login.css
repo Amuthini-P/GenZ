@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a23;
+  color: #ffffff;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.background {
+  background: url("https://researchresearch-news-wordpress-media-live.s3.eu-west-1.amazonaws.com/2020/08/medical_healthcare_technology_graphic-1-738x443.jpg")
+    no-repeat center center/cover;
+  filter: blur(10px) brightness(0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(75, 91, 255, 0.2);
+}
+
+.login-container h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.login-container p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #cccccc;
+}
+
+form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #4b5bff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+form button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: #4b5bff;
+  border-color: #4b5bff;
+  color: white;
+  box-shadow: 0 0 10px rgba(75, 91, 255, 0.6);
+}
+
+
+.signup-link {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #dddddd; /* Light gray for the text */
+}
+
+.signup-link a {
+  color: #1c1f2b; 
+  text-decoration: none;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.signup-link a:hover {
+  background: #ffffff;
+  color: #000000;
+  text-decoration: none;
+}
+
+
+#login-message {
+  margin-top: 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
